@@ -1,11 +1,11 @@
 {
-  "mission_id": "mission_8e5f275e",
+  "mission_id": "mission_08a266c9",
   "completed_tasks": {
     "deadlines": {
       "success": true,
       "tool": "search_jobs",
       "server": "ResearchMCP",
-      "elapsed_ms": 1.01,
+      "elapsed_ms": 0.39,
       "data": {
         "query": "AI ML Agentic internship 2026",
         "total_found": 5,
@@ -97,7 +97,7 @@
       "success": true,
       "tool": "read_resume",
       "server": "WorkspaceMCP",
-      "elapsed_ms": 6.4,
+      "elapsed_ms": 0.27,
       "data": {
         "status": "success",
         "candidate_name": "Alex Kumar",
@@ -191,7 +191,7 @@
       "success": true,
       "tool": "create_email_draft",
       "server": "WorkspaceMCP",
-      "elapsed_ms": 4.65,
+      "elapsed_ms": 1.46,
       "data": {
         "status": "success",
         "draft": {
@@ -208,7 +208,7 @@
       "success": true,
       "tool": "save_application_tracker",
       "server": "WorkspaceMCP",
-      "elapsed_ms": 2.49,
+      "elapsed_ms": 0.75,
       "data": {
         "status": "success",
         "saved_count": 3,

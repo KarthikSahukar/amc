@@ -1,165 +1,510 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
 :root {
-  --bg-primary: #07090e;
-  --bg-surface: #0d121f;
-  --bg-card: #121829;
-  --bg-card-hover: #18223a;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(56, 189, 248, 0.4);
-  
-  --color-cyan: #06b6d4;
-  --color-cyan-glow: rgba(6, 182, 212, 0.25);
-  --color-emerald: #10b981;
-  --color-emerald-glow: rgba(16, 185, 129, 0.25);
-  --color-amber: #f59e0b;
-  --color-amber-glow: rgba(245, 158, 11, 0.25);
-  --color-rose: #f43f5e;
-  --color-rose-glow: rgba(244, 63, 94, 0.25);
-  --color-purple: #8b5cf6;
-  --color-purple-glow: rgba(139, 92, 246, 0.25);
+  --bg-deep:    #050709;
+  --bg-dark:    #08090d;
+  --bg-surface: #0c0e14;
+  --bg-card:    #111520;
+  --bg-card-hover: #161c2d;
+  --bg-glass:   rgba(12, 14, 20, 0.85);
+
+  --border-subtle:  rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.11);
+  --border-focus:   rgba(99, 179, 237, 0.5);
+
+  /* Accent — restrained indigo/blue */
+  --accent:         #4f8ef7;
+  --accent-dim:     rgba(79, 142, 247, 0.18);
+  --accent-glow:    rgba(79, 142, 247, 0.25);
+
+  /* Status palette */
+  --green:       #22c55e;
+  --green-dim:   rgba(34, 197, 94, 0.15);
+  --green-glow:  rgba(34, 197, 94, 0.25);
+
+  --amber:       #f59e0b;
+  --amber-dim:   rgba(245, 158, 11, 0.15);
+  --amber-glow:  rgba(245, 158, 11, 0.25);
+
+  --red:         #f43f5e;
+  --red-dim:     rgba(244, 63, 94, 0.15);
+  --red-glow:    rgba(244, 63, 94, 0.3);
+
+  --purple:      #a78bfa;
+  --purple-dim:  rgba(167, 139, 250, 0.15);
+
+  --muted:       #3f4759;
+
+  --text-primary:   #f1f5f9;
+  --text-secondary: #8892a4;
+  --text-muted:     #4a5568;
+
+  /* Timing */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { height: 100%; }
 
 body {
-  background-color: var(--bg-primary);
-  color: #f1f5f9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  overflow-x: hidden;
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
-code, pre, .font-mono {
-  font-family: 'JetBrains Mono', monospace;
-}
+#root { height: 100%; }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.6);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.4);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.6);
-}
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.mono { font-family: 'JetBrains Mono', monospace; }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(13, 18, 31, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.5); }
 
-.glass-panel-elevated {
-  background: rgba(18, 24, 41, 0.92);
+/* ============================================================
+   GLASS SURFACES
+   ============================================================ */
+.glass {
+  background: var(--bg-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-subtle);
 }
 
-/* Glow effects */
-.glow-cyan {
-  box-shadow: 0 0 20px var(--color-cyan-glow);
+.glass-elevated {
+  background: rgba(14, 17, 26, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.04);
 }
 
-.glow-emerald {
-  box-shadow: 0 0 20px var(--color-emerald-glow);
+/* ============================================================
+   AMBIENT BACKGROUND GLOW
+   ============================================================ */
+.ambient-bg {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 20%, rgba(79, 142, 247, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(34, 197, 94, 0.03) 0%, transparent 50%),
+    var(--bg-deep);
 }
 
-.glow-amber {
-  box-shadow: 0 0 20px var(--color-amber-glow);
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+
+/* Fade up entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.glow-rose {
-  box-shadow: 0 0 20px var(--color-rose-glow);
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-/* Node pulse animations */
+/* Scale in */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Node appear */
+@keyframes node-appear {
+  from { opacity: 0; transform: scale(0.7) translateY(-12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Edge draw (stroke-dashoffset trick) */
+@keyframes edge-draw {
+  from { stroke-dashoffset: 300; opacity: 0.3; }
+  to   { stroke-dashoffset: 0;   opacity: 1; }
+}
+
+/* Pulse ring for running nodes */
 @keyframes pulse-ring {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
+  0%   { transform: scale(1);    opacity: 0.7; }
+  50%  { transform: scale(1.15); opacity: 0.2; }
+  100% { transform: scale(1);    opacity: 0.7; }
 }
 
-.animate-pulse-ring {
-  animation: pulse-ring 2s infinite ease-in-out;
+/* Flowing data particles along edges */
+@keyframes flow-particle {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
 }
 
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(1000%); }
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
 }
 
-.scanline-effect {
+/* Shimmer sweep */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Bounce gentle */
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* Typewriter cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Success pop */
+@keyframes success-pop {
+  0%   { transform: scale(0.5); opacity: 0; }
+  60%  { transform: scale(1.2); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* Slide in right */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Slide out right */
+@keyframes slide-out-right {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+/* ============================================================
+   UTILITY ANIMATION CLASSES
+   ============================================================ */
+.animate-fade-up   { animation: fade-up 0.5s var(--ease-smooth) forwards; }
+.animate-fade-in   { animation: fade-in 0.4s ease forwards; }
+.animate-scale-in  { animation: scale-in 0.4s var(--ease-spring) forwards; }
+.animate-spin-slow { animation: spin 1.5s linear infinite; }
+.animate-glow-pulse{ animation: glow-pulse 2s ease-in-out infinite; }
+.animate-bounce-y  { animation: bounce-y 1.5s ease-in-out infinite; }
+
+/* Staggered children */
+.stagger-children > * { opacity: 0; animation: fade-up 0.5s var(--ease-smooth) forwards; }
+.stagger-children > *:nth-child(1) { animation-delay: 0.0s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.16s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.24s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.32s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.40s; }
+
+/* ============================================================
+   LANDING INPUT GLOW
+   ============================================================ */
+.mission-input {
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid var(--border-default);
+  border-radius: 16px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 18px 20px;
+  width: 100%;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.mission-input:focus {
+  border-color: rgba(79, 142, 247, 0.6);
+  box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.1), 0 0 24px rgba(79, 142, 247, 0.08);
+}
+.mission-input::placeholder { color: var(--text-muted); }
+
+/* ============================================================
+   BUTTON VARIANTS
+   ============================================================ */
+.btn-primary {
+  background: linear-gradient(135deg, #4f8ef7, #3b6fd4);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, opacity 0.15s;
+  box-shadow: 0 4px 20px rgba(79, 142, 247, 0.3);
   position: relative;
   overflow: hidden;
 }
-.scanline-effect::after {
-  content: " ";
-  display: block;
+.btn-primary::after {
+  content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 2px, 3px 100%;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  border-radius: inherit;
   pointer-events: none;
 }
-
-/* React Flow custom styling */
-.react-flow__background {
-  background-color: #080c14 !important;
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(79, 142, 247, 0.4);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
-.react-flow__edge-path {
-  stroke: #334155 !important;
-  stroke-width: 2 !important;
-  transition: stroke 0.3s ease;
+.btn-ghost {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.09);
+  color: var(--text-primary);
+  border-color: var(--border-default);
 }
 
-.react-flow__edge.animated .react-flow__edge-path {
-  stroke: #06b6d4 !important;
-  stroke-width: 2.5 !important;
+/* ============================================================
+   STATUS COLORS
+   ============================================================ */
+.status-pending   { --node-border: var(--muted); --node-bg: rgba(63,71,89,0.2); --node-text: #6b7a95; }
+.status-running   { --node-border: var(--accent); --node-bg: rgba(79,142,247,0.12); --node-text: #93bbff; }
+.status-success   { --node-border: var(--green);  --node-bg: rgba(34,197,94,0.1);  --node-text: #4ade80; }
+.status-failed    { --node-border: var(--red);    --node-bg: rgba(244,63,94,0.12); --node-text: #fb7185; }
+.status-retrying  { --node-border: var(--amber);  --node-bg: rgba(245,158,11,0.12);--node-text: #fbbf24; }
+.status-waiting   { --node-border: var(--amber);  --node-bg: rgba(245,158,11,0.12);--node-text: #fbbf24; }
+.status-skipped   { --node-border: var(--muted);  --node-bg: rgba(63,71,89,0.1);   --node-text: #4a5568; }
+
+/* ============================================================
+   DAG NODE STYLES
+   ============================================================ */
+.dag-node {
+  border: 1.5px solid var(--node-border, var(--muted));
+  background: var(--node-bg, rgba(63,71,89,0.2));
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-smooth),
+              box-shadow 0.2s,
+              border-color 0.3s,
+              background 0.3s;
+  position: relative;
+  overflow: hidden;
+  animation: node-appear 0.45s var(--ease-spring) both;
+  user-select: none;
+}
+.dag-node:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.dag-node.is-running {
+  box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow);
+  animation: node-appear 0.45s var(--ease-spring) both;
+}
+.dag-node.is-running::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+.dag-node.is-success {
+  box-shadow: 0 0 16px var(--green-glow);
+}
+.dag-node.is-failed {
+  box-shadow: 0 0 20px var(--red-glow);
 }
 
-.react-flow__controls {
-  background: rgba(15, 23, 42, 0.8) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 8px !important;
+/* ============================================================
+   ACTIVITY DRAWER
+   ============================================================ */
+.activity-drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 380px;
+  z-index: 40;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-smooth);
+}
+.activity-drawer.open {
+  transform: translateX(0);
+}
+
+/* ============================================================
+   PLANNING ANIMATION OVERLAY
+   ============================================================ */
+.planning-step {
+  animation: fade-up 0.5s var(--ease-smooth) both;
+}
+
+/* ============================================================
+   CINEMATIC TRANSITION
+   ============================================================ */
+.screen-transition {
+  animation: fade-in 0.6s var(--ease-smooth) both;
+}
+
+/* ============================================================
+   COMPLETION SCREEN
+   ============================================================ */
+.success-icon {
+  animation: success-pop 0.6s var(--ease-spring) both;
+}
+
+/* ============================================================
+   CHIP / TAG
+   ============================================================ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid;
+}
+.chip-blue   { background: var(--accent-dim);  border-color: rgba(79,142,247,0.35); color: #93bbff; }
+.chip-green  { background: var(--green-dim);   border-color: rgba(34,197,94,0.35);  color: #4ade80; }
+.chip-amber  { background: var(--amber-dim);   border-color: rgba(245,158,11,0.35); color: #fbbf24; }
+.chip-red    { background: var(--red-dim);     border-color: rgba(244,63,94,0.35);  color: #fb7185; }
+.chip-purple { background: var(--purple-dim);  border-color: rgba(167,139,250,0.35);color: #c4b5fd; }
+.chip-muted  { background: rgba(63,71,89,0.2); border-color: rgba(63,71,89,0.4);   color: #6b7a95; }
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+.progress-bar-track {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
   overflow: hidden;
 }
-
-.react-flow__controls-button {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  background: transparent !important;
-  fill: #94a3b8 !important;
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  transition: width 0.5s var(--ease-smooth);
 }
 
+/* ============================================================
+   LATENCY BARS
+   ============================================================ */
+.latency-bar {
+  height: 6px;
+  border-radius: 3px;
+  transition: width 1s var(--ease-smooth);
+}
+
+/* ============================================================
+   SHIMMER LOADING
+   ============================================================ */
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ============================================================
+   REACT FLOW OVERRIDES (kept minimal)
+   ============================================================ */
+.react-flow__background { background-color: var(--bg-deep) !important; }
+.react-flow__edge-path {
+  stroke: var(--muted) !important;
+  stroke-width: 1.5 !important;
+  transition: stroke 0.4s ease, stroke-width 0.3s ease;
+}
+.react-flow__edge.animated .react-flow__edge-path {
+  stroke: var(--accent) !important;
+  stroke-width: 2 !important;
+}
+.react-flow__controls {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+}
+.react-flow__controls-button {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  background: transparent !important;
+  fill: var(--text-secondary) !important;
+}
 .react-flow__controls-button:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  fill: #f1f5f9 !important;
+  background: rgba(255,255,255,0.08) !important;
+  fill: var(--text-primary) !important;
+}
+
+/* ============================================================
+   CURSOR BLINK
+   ============================================================ */
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+  margin-left: 1px;
+}
+
+/* ============================================================
+   NODE DETAIL PANEL
+   ============================================================ */
+.node-detail-panel {
+  animation: slide-in-right 0.3s var(--ease-smooth) both;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text-primary);
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
