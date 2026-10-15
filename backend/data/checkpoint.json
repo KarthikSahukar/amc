@@ -1,0 +1,224 @@
+{
+  "mission_id": "mission_8e5f275e",
+  "completed_tasks": {
+    "deadlines": {
+      "success": true,
+      "tool": "search_jobs",
+      "server": "ResearchMCP",
+      "elapsed_ms": 1.01,
+      "data": {
+        "query": "AI ML Agentic internship 2026",
+        "total_found": 5,
+        "jobs": [
+          {
+            "id": "job_01",
+            "title": "Machine Learning Research Intern",
+            "company": "DeepMind Anthro Labs",
+            "location": "Bengaluru, India (Hybrid)",
+            "skills": [
+              "PyTorch",
+              "Transformers",
+              "LLMs",
+              "Reinforcement Learning",
+              "Python"
+            ],
+            "deadline": "2026-11-15",
+            "url": "https://deepmind.example.com/careers/ml-intern",
+            "stipend": "\u20b960,000 / month"
+          },
+          {
+            "id": "job_02",
+            "title": "Agentic AI Engineering Intern",
+            "company": "Nexus Cognitive",
+            "location": "Remote",
+            "skills": [
+              "Agentic Workflows",
+              "FastAPI",
+              "Python",
+              "Tool Calling",
+              "Vector DBs"
+            ],
+            "deadline": "2026-11-01",
+            "url": "https://nexus-ai.example.com/interns/agentic-eng",
+            "stipend": "\u20b950,000 / month"
+          },
+          {
+            "id": "job_03",
+            "title": "NLP & GenAI Systems Intern",
+            "company": "Scale Intelligence",
+            "location": "Bengaluru, India (On-site)",
+            "skills": [
+              "NLP",
+              "PyTorch",
+              "RAG",
+              "Python",
+              "Docker"
+            ],
+            "deadline": "2026-11-20",
+            "url": "https://scaleintel.example.com/jobs/nlp-intern",
+            "stipend": "\u20b955,000 / month"
+          },
+          {
+            "id": "job_04",
+            "title": "Computer Vision & Edge ML Intern",
+            "company": "Aura Robotics",
+            "location": "Hyderabad, India (Hybrid)",
+            "skills": [
+              "OpenCV",
+              "C++",
+              "TensorRT",
+              "Edge AI",
+              "ROS"
+            ],
+            "deadline": "2026-10-30",
+            "url": "https://aurarobotics.example.com/careers/cv-intern",
+            "stipend": "\u20b940,000 / month"
+          },
+          {
+            "id": "job_05",
+            "title": "Data Engineering & Analytics Intern",
+            "company": "FinData Dynamics",
+            "location": "Mumbai, India (Remote)",
+            "skills": [
+              "SQL",
+              "Snowflake",
+              "Spark",
+              "Python",
+              "Tableau"
+            ],
+            "deadline": "2026-11-10",
+            "url": "https://findatadynamics.example.com/jobs/de-intern",
+            "stipend": "\u20b935,000 / month"
+          }
+        ]
+      }
+    },
+    "resume": {
+      "success": true,
+      "tool": "read_resume",
+      "server": "WorkspaceMCP",
+      "elapsed_ms": 6.4,
+      "data": {
+        "status": "success",
+        "candidate_name": "Alex Kumar",
+        "degree": "B.Tech in Computer Science & Engineering (3rd Year)",
+        "key_skills": [
+          "PyTorch",
+          "FastAPI",
+          "Agentic AI",
+          "MCP",
+          "Transformers",
+          "Distributed Systems"
+        ],
+        "raw_text": "===================================================================\nCANDIDATE RESUME\n===================================================================\nName: Alex Kumar\nEmail: alex.kumar@cs.university.edu\nPhone: +91 98765 43210\nDegree: B.Tech in Computer Science & Engineering (3rd Year, Semester 6)\nGPA: 9.1 / 10.0\n\nOBJECTIVE:\nEnthusiastic CS undergraduate passionate about Agentic AI architectures, LLM orchestration, parallel inference pipelines, and autonomous workflows. Seeking a high-impact AI/ML Internship.\n\nEDUCATION:\n- B.Tech in Computer Science & Engineering | Dept of CSE (AIML) | 2023 - 2027\n  Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Distributed Systems, Data Structures & Algorithms.\n\nTECHNICAL SKILLS:\n- Languages: Python, JavaScript/TypeScript, C++, SQL\n- Frameworks & Libraries: PyTorch, Hugging Face Transformers, FastAPI, React, Node.js, NumPy, Pandas\n- Agentic & AI Tooling: MCP (Model Context Protocol), Tool Calling, LangChain, DSPy, Vector Databases (Qdrant, Chroma)\n- Tools & DevOps: Git, Docker, Linux/WSL, REST APIs, WebSockets\n\nPROJECTS:\n1. Parallel Agent Orchestrator (pReAct Core):\n   - Implemented a parallel tool-drafting agent breaking serial ReAct latency bottlenecks.\n   - Categorical context partitioning reduced prompt prefill tokens and tool hallucination.\n   - Built concurrent execution engine using Python asyncio and ThreadPoolExecutor.\n\n2. High-Throughput RAG & Hybrid Search Engine:\n   - Designed a semantic retrieval pipeline with dense embeddings and BM25 hybrid ranking.\n   - Integrated streaming generation with FastAPI and WebSocket for sub-100ms response start.\n\n3. Autonomous Code Reviewer Agent:\n   - Built an MCP-compliant agent that pulls git diffs, analyzes ASTs, runs unit tests, and drafts pull request comments.\n\nPUBLICATIONS / HONORS:\n- 1st Place - National AI Agent Hackathon 2025\n- Contributor to open-source agentic evaluation benchmarks\n===================================================================\n"
+      }
+    },
+    "match": {
+      "candidate": "Alex Kumar",
+      "matched_count": 3,
+      "matched_jobs": [
+        {
+          "id": "job_01",
+          "title": "Machine Learning Research Intern",
+          "company": "DeepMind Anthro Labs",
+          "location": "Bengaluru, India (Hybrid)",
+          "skills": [
+            "PyTorch",
+            "Transformers",
+            "LLMs",
+            "Reinforcement Learning",
+            "Python"
+          ],
+          "deadline": "2026-11-15",
+          "url": "https://deepmind.example.com/careers/ml-intern",
+          "stipend": "\u20b960,000 / month"
+        },
+        {
+          "id": "job_02",
+          "title": "Agentic AI Engineering Intern",
+          "company": "Nexus Cognitive",
+          "location": "Remote",
+          "skills": [
+            "Agentic Workflows",
+            "FastAPI",
+            "Python",
+            "Tool Calling",
+            "Vector DBs"
+          ],
+          "deadline": "2026-11-01",
+          "url": "https://nexus-ai.example.com/interns/agentic-eng",
+          "stipend": "\u20b950,000 / month"
+        },
+        {
+          "id": "job_03",
+          "title": "NLP & GenAI Systems Intern",
+          "company": "Scale Intelligence",
+          "location": "Bengaluru, India (On-site)",
+          "skills": [
+            "NLP",
+            "PyTorch",
+            "RAG",
+            "Python",
+            "Docker"
+          ],
+          "deadline": "2026-11-20",
+          "url": "https://scaleintel.example.com/jobs/nlp-intern",
+          "stipend": "\u20b955,000 / month"
+        }
+      ],
+      "rankings": [
+        {
+          "rank": 1,
+          "company": "DeepMind Anthro Labs",
+          "score": "96%",
+          "reason": "Direct match for Agentic AI, PyTorch & LLM orchestration"
+        },
+        {
+          "rank": 2,
+          "company": "Nexus Cognitive",
+          "score": "94%",
+          "reason": "Strong match for FastAPI, Tool Calling & MCP integration"
+        },
+        {
+          "rank": 3,
+          "company": "Scale Intelligence",
+          "score": "91%",
+          "reason": "Match for High-Throughput RAG & NLP pipelines"
+        }
+      ]
+    },
+    "email": {
+      "success": true,
+      "tool": "create_email_draft",
+      "server": "WorkspaceMCP",
+      "elapsed_ms": 4.65,
+      "data": {
+        "status": "success",
+        "draft": {
+          "company": "DeepMind Anthro Labs",
+          "role": "Machine Learning Research Intern",
+          "contact_email": "careers@deepmindanthrolabs.com",
+          "subject": "Application for Machine Learning Research Intern - Alex Kumar",
+          "body": "Dear DeepMind Anthro Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Machine Learning Research Intern position. As a 3rd-year CS student specializing in Agentic AI and high-throughput LLM orchestration, I have built parallel tool-execution frameworks (pReAct) and low-latency RAG systems using PyTorch and FastAPI.\n\nI would welcome the opportunity to discuss how my background aligns with your engineering initiatives.\n\nBest regards,\nAlex Kumar\nalex.kumar@cs.university.edu | +91 98765 43210",
+          "status": "DRAFTED"
+        }
+      }
+    },
+    "save": {
+      "success": true,
+      "tool": "save_application_tracker",
+      "server": "WorkspaceMCP",
+      "elapsed_ms": 2.49,
+      "data": {
+        "status": "success",
+        "saved_count": 3,
+        "file_path": "C:\\Users\\Neha HR\\Desktop\\amc-hack\\backend\\data\\applications.json",
+        "message": "Successfully updated application tracker with 3 opportunities."
+      }
+    },
+    "verify": {
+      "verified": true,
+      "message": "Ready for verification audit"
+    }
+  }
+}

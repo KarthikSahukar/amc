@@ -1,0 +1,62 @@
+[
+  {
+    "id": "job_01",
+    "title": "Machine Learning Research Intern",
+    "company": "DeepMind Anthro Labs",
+    "location": "Bengaluru, India (Hybrid)",
+    "skills": ["PyTorch", "Transformers", "LLMs", "Reinforcement Learning", "Python"],
+    "deadline": "2026-11-15",
+    "stipend": "₹60,000 / month",
+    "url": "https://deepmind.example.com/careers/ml-intern",
+    "description": "Work on cutting-edge agentic workflows, speculative decoding, and model context compression techniques. Required: strong Python, PyTorch, knowledge of transformer architectures.",
+    "match_score": 96
+  },
+  {
+    "id": "job_02",
+    "title": "Agentic AI Engineering Intern",
+    "company": "Nexus Cognitive",
+    "location": "Remote",
+    "skills": ["Agentic Workflows", "FastAPI", "Python", "Tool Calling", "Vector DBs"],
+    "deadline": "2026-11-01",
+    "stipend": "₹50,000 / month",
+    "url": "https://nexus-ai.example.com/interns/agentic-eng",
+    "description": "Develop multi-agent orchestration frameworks, MCP tool integrations, and asynchronous task execution graphs using FastAPI and Python.",
+    "match_score": 94
+  },
+  {
+    "id": "job_03",
+    "title": "NLP & GenAI Systems Intern",
+    "company": "Scale Intelligence",
+    "location": "Bengaluru, India (On-site)",
+    "skills": ["NLP", "PyTorch", "RAG", "Python", "Docker"],
+    "deadline": "2026-11-20",
+    "stipend": "₹55,000 / month",
+    "url": "https://scaleintel.example.com/jobs/nlp-intern",
+    "description": "Build high-throughput RAG pipelines and low-latency inference orchestration for enterprise LLM agents.",
+    "match_score": 91
+  },
+  {
+    "id": "job_04",
+    "title": "Computer Vision & Edge ML Intern",
+    "company": "Aura Robotics",
+    "location": "Hyderabad, India (Hybrid)",
+    "skills": ["OpenCV", "C++", "TensorRT", "Edge AI", "ROS"],
+    "deadline": "2026-10-30",
+    "stipend": "₹40,000 / month",
+    "url": "https://aurarobotics.example.com/careers/cv-intern",
+    "description": "Deploy real-time object detection models on edge devices. Requires C++ and OpenCV expertise.",
+    "match_score": 68
+  },
+  {
+    "id": "job_05",
+    "title": "Data Engineering & Analytics Intern",
+    "company": "FinData Dynamics",
+    "location": "Mumbai, India (Remote)",
+    "skills": ["SQL", "Snowflake", "Spark", "Python", "Tableau"],
+    "deadline": "2026-11-10",
+    "stipend": "₹35,000 / month",
+    "url": "https://findatadynamics.example.com/jobs/de-intern",
+    "description": "Build ETL pipelines for structured financial time-series data using Spark and Snowflake.",
+    "match_score": 62
+  }
+]

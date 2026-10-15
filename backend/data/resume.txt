@@ -1,0 +1,39 @@
+===================================================================
+CANDIDATE RESUME
+===================================================================
+Name: Alex Kumar
+Email: alex.kumar@cs.university.edu
+Phone: +91 98765 43210
+Degree: B.Tech in Computer Science & Engineering (3rd Year, Semester 6)
+GPA: 9.1 / 10.0
+
+OBJECTIVE:
+Enthusiastic CS undergraduate passionate about Agentic AI architectures, LLM orchestration, parallel inference pipelines, and autonomous workflows. Seeking a high-impact AI/ML Internship.
+
+EDUCATION:
+- B.Tech in Computer Science & Engineering | Dept of CSE (AIML) | 2023 - 2027
+  Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Distributed Systems, Data Structures & Algorithms.
+
+TECHNICAL SKILLS:
+- Languages: Python, JavaScript/TypeScript, C++, SQL
+- Frameworks & Libraries: PyTorch, Hugging Face Transformers, FastAPI, React, Node.js, NumPy, Pandas
+- Agentic & AI Tooling: MCP (Model Context Protocol), Tool Calling, LangChain, DSPy, Vector Databases (Qdrant, Chroma)
+- Tools & DevOps: Git, Docker, Linux/WSL, REST APIs, WebSockets
+
+PROJECTS:
+1. Parallel Agent Orchestrator (pReAct Core):
+   - Implemented a parallel tool-drafting agent breaking serial ReAct latency bottlenecks.
+   - Categorical context partitioning reduced prompt prefill tokens and tool hallucination.
+   - Built concurrent execution engine using Python asyncio and ThreadPoolExecutor.
+
+2. High-Throughput RAG & Hybrid Search Engine:
+   - Designed a semantic retrieval pipeline with dense embeddings and BM25 hybrid ranking.
+   - Integrated streaming generation with FastAPI and WebSocket for sub-100ms response start.
+
+3. Autonomous Code Reviewer Agent:
+   - Built an MCP-compliant agent that pulls git diffs, analyzes ASTs, runs unit tests, and drafts pull request comments.
+
+PUBLICATIONS / HONORS:
+- 1st Place - National AI Agent Hackathon 2025
+- Contributor to open-source agentic evaluation benchmarks
+===================================================================

@@ -1,0 +1,23 @@
+[
+  {
+    "recipient": "careers@deepmind.example.com",
+    "company": "DeepMind Anthro Labs",
+    "role": "Machine Learning Research Intern",
+    "subject": "Application for Machine Learning Research Intern - Alex Kumar",
+    "pitch": "Built pReAct parallel agent orchestration framework; research focus on latency minimization & tool-use efficiency."
+  },
+  {
+    "recipient": "interns@nexus-ai.example.com",
+    "company": "Nexus Cognitive",
+    "role": "Agentic AI Engineering Intern",
+    "subject": "Application for Agentic AI Engineering Intern - Alex Kumar",
+    "pitch": "Experienced with FastAPI, Model Context Protocol (MCP), and asynchronous DAG workflow execution."
+  },
+  {
+    "recipient": "talent@scaleintel.example.com",
+    "company": "Scale Intelligence",
+    "role": "NLP & GenAI Systems Intern",
+    "subject": "Application for NLP & GenAI Systems Intern - Alex Kumar",
+    "pitch": "Engineered high-throughput RAG search engines with dense retrieval and real-time LLM streaming."
+  }
+]

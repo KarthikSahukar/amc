@@ -1,0 +1,54 @@
+{
+  "last_updated": "2026-10-15T12:00:00Z",
+  "total_records": 3,
+  "applications": [
+    {
+      "id": "job_01",
+      "title": "Machine Learning Research Intern",
+      "company": "DeepMind Anthro Labs",
+      "location": "Bengaluru, India (Hybrid)",
+      "skills": [
+        "PyTorch",
+        "Transformers",
+        "LLMs",
+        "Reinforcement Learning",
+        "Python"
+      ],
+      "deadline": "2026-11-15",
+      "url": "https://deepmind.example.com/careers/ml-intern",
+      "stipend": "\u20b960,000 / month"
+    },
+    {
+      "id": "job_02",
+      "title": "Agentic AI Engineering Intern",
+      "company": "Nexus Cognitive",
+      "location": "Remote",
+      "skills": [
+        "Agentic Workflows",
+        "FastAPI",
+        "Python",
+        "Tool Calling",
+        "Vector DBs"
+      ],
+      "deadline": "2026-11-01",
+      "url": "https://nexus-ai.example.com/interns/agentic-eng",
+      "stipend": "\u20b950,000 / month"
+    },
+    {
+      "id": "job_03",
+      "title": "NLP & GenAI Systems Intern",
+      "company": "Scale Intelligence",
+      "location": "Bengaluru, India (On-site)",
+      "skills": [
+        "NLP",
+        "PyTorch",
+        "RAG",
+        "Python",
+        "Docker"
+      ],
+      "deadline": "2026-11-20",
+      "url": "https://scaleintel.example.com/jobs/nlp-intern",
+      "stipend": "\u20b955,000 / month"
+    }
+  ]
+}
